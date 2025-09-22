@@ -1,9 +1,4 @@
 ﻿using BuildingBlocks.CQRS;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Learning.Application.Queries.Property.GetProperties
 {
@@ -15,5 +10,12 @@ namespace Learning.Application.Queries.Property.GetProperties
     public class GetPropertiesResult
     {
         public IEnumerable<Domain.Models.Property> Properties { get; set; } = default!;
+
+        public GetPropertiesResult(IEnumerable<Domain.Models.Property> properties)
+        {
+            this.Properties = properties;
+        }
     }
+
+    
 }

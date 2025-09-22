@@ -5,4 +5,6 @@ V1 -  CQRS Implementation
 	Create Controller
 	Create Building blocks
 
-V2 -
+V2 - DB Context
+	Add ApplicationDbContext
+	Add Migration	

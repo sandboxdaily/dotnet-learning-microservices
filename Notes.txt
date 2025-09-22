@@ -1,0 +1,8 @@
+
+V1 -  CQRS Implementation
+	Create Property Model
+	Create Property Command and Command Handler
+	Create Controller
+	Create Building blocks
+
+V2 -

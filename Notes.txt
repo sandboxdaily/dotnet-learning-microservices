@@ -7,4 +7,11 @@ V1 -  CQRS Implementation
 
 V2 - DB Context
 	Add ApplicationDbContext
-	Add Migration	
+	Add Migration
+
+V3 - 
+	Add ApplicationDbContext
+	Add Migration
+
+V4 - Add Fluent Validation : AddValidatorsFromAssembly
+		Add Update Property

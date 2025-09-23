@@ -1,0 +1,28 @@
+﻿using Learning.Application.Commands.Property.AddProperty;
+using MediatR;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Learning.API.Controllers
+{
+    [Route("api/[controller]")]
+    //[ApiController]
+    public class PropertyController : ControllerBase
+    {
+        private readonly ISender _sender;
+
+        public PropertyController(ISender sender)
+        {
+            _sender = sender;
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<AddPropertyResult>> AddProperty (
+            [FromBody] AddPropertyCommand request, CancellationToken cancellationToken)
+        {
+            var result = await _sender.Send(request, cancellationToken);
+
+            return Ok(result);
+        }
+    }
+}

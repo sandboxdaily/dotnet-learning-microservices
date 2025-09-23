@@ -18,7 +18,7 @@ namespace Learning.Application.Commands.Property.AddProperty
     {
         public AddPropertyCommandValidator()
         {
-            RuleFor(x => x).NotEmpty().WithMessage("Name is required");
+            RuleFor(x => x.Name).NotEmpty().WithMessage("Name is required");
         }
     }
 

@@ -1,8 +1,7 @@
 # Ignore build output directories
-    **/bin/
-    **/obj/
+**/bin/
+**/obj/
 
 # Visual Studio solution and project files
 .vs/
 
-x

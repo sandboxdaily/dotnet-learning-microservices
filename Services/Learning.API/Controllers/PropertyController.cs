@@ -1,4 +1,5 @@
 ﻿using Learning.Application.Commands.Property.AddProperty;
+using Learning.Application.Commands.Property.UpdateProperty;
 using Learning.Application.Queries.Property.GetProperties;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -20,6 +21,15 @@ namespace Learning.API.Controllers
         [HttpPost]
         public async Task<ActionResult<AddPropertyResult>> AddProperty (
             [FromBody] AddPropertyCommand request, CancellationToken cancellationToken)
+        {
+            var result = await _sender.Send(request, cancellationToken);
+
+            return Ok(result);
+        }
+
+        [HttpPut]
+        public async Task<ActionResult<UpdatePropertyResult>> UpdateProperty(
+            [FromBody] UpdatePropertyCommand request, CancellationToken cancellationToken)
         {
             var result = await _sender.Send(request, cancellationToken);
 

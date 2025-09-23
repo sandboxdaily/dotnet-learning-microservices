@@ -1,10 +1,12 @@
 using Learning.Application;
+using Learning.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services
-       .AddApplicationServices(builder.Configuration); // Learning.Application.DependencyInjection
+        .AddApplicationServices(builder.Configuration) // Learning.Application.DependencyInjection
+        .AddInfrastructureServices(builder.Configuration); // Learning.Infrastructure.DependencyInjection
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

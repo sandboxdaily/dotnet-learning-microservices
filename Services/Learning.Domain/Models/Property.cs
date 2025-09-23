@@ -4,7 +4,7 @@ namespace Learning.Domain.Models
 {
     public class Property : Entity<Guid>
     {
-        public string Name { get; private set; } = default!;
+        public string Name { get; set; } = default!;
 
         public static Property Create(Guid id, string name)
         {

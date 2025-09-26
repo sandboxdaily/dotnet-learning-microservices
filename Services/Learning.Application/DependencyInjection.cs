@@ -17,6 +17,7 @@ namespace Learning.Application
             {
                 config.RegisterServicesFromAssembly(assembly);
                 config.AddOpenBehavior(typeof(ValidationBehavior<,>)); // Fluent Validation
+                config.AddOpenBehavior(typeof(LoggingBehavior<,>));
             });
 
             services.AddValidatorsFromAssembly(assembly); // Fluent Validation

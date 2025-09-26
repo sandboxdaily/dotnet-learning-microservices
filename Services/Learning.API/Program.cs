@@ -1,5 +1,6 @@
 using Learning.Application;
 using Learning.Infrastructure;
+using Learning.Infrastructure.Data.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,7 +22,9 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    await app.InitialiseDatabaseAsync();
 }
+
 
 app.UseHttpsRedirection();
 

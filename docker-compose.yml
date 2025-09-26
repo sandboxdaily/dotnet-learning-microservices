@@ -1,0 +1,9 @@
+services:
+  learning.api:
+    image: ${DOCKER_REGISTRY-}learningapi
+    build:
+      context: .
+      dockerfile: Services/Learning.API/Dockerfile
+
+  learningdb:
+    image: mcr.microsoft.com/mssql/server

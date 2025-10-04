@@ -14,7 +14,21 @@ namespace Learning.Infrastructure.Data.Extensions
 
             context.Database.MigrateAsync().GetAwaiter().GetResult();
 
-            //await SeedAsync(context);
+            await SeedAsync(context);
+        }
+
+        private static async Task SeedAsync(ApplicationDbContext context)
+        {
+            await SeedCustomerAsync(context);
+        }
+
+        private static async Task SeedCustomerAsync(ApplicationDbContext context)
+        {
+            if (!await context.Properties.AnyAsync())
+            {
+                await context.Properties.AddRangeAsync(InitialData.Properties);
+                await context.SaveChangesAsync();
+            }
         }
     }
 }

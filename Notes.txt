@@ -24,11 +24,10 @@ V6 - Add migration ..creation of database
 V7 -  Dockerize Project
       Docker compose 
 
-	  docker build -f Services/Learning.API/Dockerfile . -t simplecoreapi:1.0.0
-	  docker run -d -p 2439:8080 --name simplecoreapi simplecoreapi:1.0.0
-
 	  docker build -f Services/Learning.API/Dockerfile . -t learning-api:1.0.0
 	  docker run -d -p 2440:8080 --name learning-api-container learning-api:1.0.0
 	  curl http://localhost:2440/WeatherForecast
 
 
+V8 -
+	IntialData.cs implement intial data migration

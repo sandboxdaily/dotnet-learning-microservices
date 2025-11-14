@@ -31,3 +31,4 @@ V7 -  Dockerize Project
 
 V8 -
 	IntialData.cs implement intial data migration
+	Implement Paging

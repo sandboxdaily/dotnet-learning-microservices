@@ -1,6 +1,7 @@
 ﻿using Learning.Application.Commands.Property.AddProperty;
 using Learning.Application.Commands.Property.UpdateProperty;
 using Learning.Application.Queries.Property.GetProperties;
+using Learning.Application.Queries.Property.GetPropertyById;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -37,11 +38,24 @@ namespace Learning.API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<GetPropertiesQuery>> GetProperties(
+        public async Task<ActionResult<GetPropertiesResult>> GetProperties(
             [FromQuery] GetPropertiesQuery request, CancellationToken cancellationToken)
         {
             var result = await _sender.Send(request, cancellationToken);
+            
+            // Note: another approach
+            // var result = await _sender.Send(new GetPropertiesQuery(), cancellationToken);
 
+            return Ok(result);
+        }
+
+        [HttpGet("GetById")]
+        public async Task<ActionResult<GetPropertyByIdQuery>> GetPropertyById(
+            [FromQuery] GetPropertyByIdQuery request, CancellationToken cancellationToken)
+        {
+            var result = await _sender.Send(request, cancellationToken);
+            // Note: another approach
+            // var result = await _sender.Send(new GetPropertyByIdQuery() { Id =  request.Id}, cancellationToken);
             return Ok(result);
         }
     }
